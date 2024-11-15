@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+/* font */
+
+
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+    /* 부모값을 상속받는 */
+    color: inherit;
+}
+
+/* layout */
+.con1,
+.con3 {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f1f1f;
+    color: #ece0c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* con1 */
+.con1 .textbox {
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.con1 .title {
+    font-family: 'yg-jalnan';
+    font-size: 7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    /* 대문자로 바꿔주는거 */
+    text-transform: uppercase;
+
+}
+
+.con1 .txt {
+    font-size: 3rem;
+    font-family: 'yg-jalnan';
+}
+
+
+
+
+
+/* con3 */
+.con3 h2 {
+    font-family: 'yg-jalnan';
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+
+
+/* gallery */
+.gallery {
+    width: 100%;
+    height: 100vh;
+    background-color: tomato;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery .inner {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 4px solid red;
+
+}
+
+/* textbox */
+.gallery .textbox {
+    width: 45%;
+}
+
+.gallery .textbox h2 {
+    font-family: 'yg-jalnan';
+    font-size: 4rem;
+}
+
+.gallery .textbox span {
+    font-family: 'yg-jalnan';
+    font-size: 6rem;
+    font-style: italic;
+}
+
+.gallery .textbox p {
+    margin-bottom: 20px;
+}
+
+
+.gallery .textbox ul {
+    margin-left: 40px;
+}
+
+
+.gallery .textbox li {
+    line-height: 2;
+    position: relative;
+}
+
+.gallery .textbox li:before {
+    content: "";
+    width: 10px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: -20px;
+    top: 55%;
+}
+
+
+.gallery .textbox .btn {
+    width: 150px;
+    height: 40px;
+    background-color: #000;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2rem;
+    margin-top: 40px;
+}
+
+
+
+
+/* imgbox */
+.gallery .imgbox {
+    width: 50%;
+    position: relative;
+}
+
+.gallery .imgbox img {
+    width: 100%;
+}
+
+
+
+.gallery .imgbox li {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+
+    /* 둘다적용이안됨 */
+    /* transform:translateY(-50%) ; */
+
+    background-color: #fff;
+    opacity: 1;
+}
+
+.gallery .imgbox .img1 {
+    transform: translateY(-50%) rotate(5deg);
+    z-index: 1;
+}
+
+.gallery .imgbox .img2 {
+    transform: translateY(-50%) rotate(-5deg);
+    z-index: 2;
+}
+
+.gallery .imgbox .img3 {
+    transform: translateY(-50%) rotate(7deg);
+    z-index: 3;
+}
+
+.gallery .imgbox .img4 {
+    transform: translateY(-50%) rotate(-7deg);
+    z-index: 4;
+}
+
+.gallery .imgbox .img5 {
+    transform: translateY(-50%) rotate(2deg);
+    z-index: 5;
+}
+
+.gallery .imgbox .img6 {
+    transform: translateY(-50%) rotate(-2deg);
+    z-index: 6;
+}
+
+.gallery .imgbox .img7 {
+    transform: translateY(-50%) rotate(0deg);
+    z-index: 7;
+}

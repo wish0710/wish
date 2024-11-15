@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <section class="con1">
+            <div class="textbox">
+                <p class="title">Scrolltrigger</p>
+                <p class="txt">웹사이트제작</p>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="inner">
+                <div class="textbox">
+                    <h2>clone<br><span>coding</span></h2>
+                    <p>일러스트결과물입니다.</p>
+                    <ul>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                        <li><a href="#">일러스트</a></li>
+                    </ul>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <ul class="imgbox">
+                    <li class="img1 upbox"><img src="img/ex1.jpg" alt=""></li>
+                    <li class="img2 upbox"><img src="img/ex2.jpg" alt=""></li>
+                    <li class="img3 upbox"><img src="img/ex3.jpg" alt=""></li>
+                    <li class="img4 upbox"><img src="img/ex4.jpg" alt=""></li>
+                    <li class="img5 upbox"><img src="img/ex5.jpg" alt=""></li>
+                    <li class="img6 upbox"><img src="img/ex6.jpg" alt=""></li>
+                    <li class="img7 upbox"><img src="img/ex7.jpg" alt=""></li>
+                </ul>
+            </div>
+    </div>
+    </section>
+
+    <section class="con3">
+        <h2>Thank you</h2>
+    </section>
+    </div>
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let upbox = document.querySelectorAll(".upbox");
+        let tl = gsap.timeline({
+            scrollTrigger: {
+
+                trigger: ".gallery",
+                pin: true,
+
+                // 부드럽게하는거
+                scrub: 3,
+                start: "top top",
+                // 시작부분에서 400%까지 스크롤한 후 종료
+                end: "+=400%",
+                // markers: true,
+            },
+
+        });
+
+        tl.from(upbox, { y: "400%", duration: "8", ease: "none", stagger: "6" });
+
+        tl.to(upbox, { y: "0" })
+    </script>
+</body>
+
+</html>
